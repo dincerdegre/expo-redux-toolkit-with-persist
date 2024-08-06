@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, useColorScheme } from "react-native";
+import { View, Text, useColorScheme, Platform } from "react-native";
 import { Link, Stack, router } from "expo-router";
 import { ThemeProvider } from "@react-navigation/native";
 import { customDarkTheme, customDefaultTheme } from "@/constants/Colors";
@@ -17,8 +17,18 @@ const Router = () => {
     <ThemeProvider
       value={colorScheme === "dark" ? customDarkTheme : customDefaultTheme}
     >
-      <Stack initialRouteName="index">
-        <Stack.Screen name="index" options={{ headerShown: true }} />
+      <Stack
+        initialRouteName="index"
+        screenOptions={{
+          ...(Platform.OS === "android" && {
+            navigationBarColor: theme.statusBarBgColor,
+          }),
+        }}
+      >
+        <Stack.Screen
+          name="index"
+          options={{ headerShown: true, headerTitle: "Redux Toolkit Example" }}
+        />
         <Stack.Screen name="settings" options={{ headerShown: true }} />
         <Stack.Screen
           name="modal"
