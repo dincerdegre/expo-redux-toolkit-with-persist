@@ -18,7 +18,7 @@ const Router = () => {
       value={colorScheme === "dark" ? customDarkTheme : customDefaultTheme}
     >
       <Stack initialRouteName="index">
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: true }} />
         <Stack.Screen name="settings" options={{ headerShown: true }} />
         <Stack.Screen
           name="modal"
