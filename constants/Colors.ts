@@ -24,9 +24,11 @@ export const customDefaultTheme = {
 
 export const Colors = {
   light: {
+    statusBarBgColor: "white",
     text: "black",
   },
   dark: {
+    statusBarBgColor: "black",
     text: "white",
   },
 };
