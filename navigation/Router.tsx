@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, useColorScheme, Platform } from "react-native";
-import { Link, Stack, router } from "expo-router";
+import { useColorScheme, Platform } from "react-native";
+import { Link, Stack } from "expo-router";
 import { ThemeProvider } from "@react-navigation/native";
 import { customDarkTheme, customDefaultTheme } from "@/constants/Colors";
 import { useTheme } from "@/hooks/useTheme";
